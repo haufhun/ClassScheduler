@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Model.Test
@@ -27,17 +28,23 @@ namespace Model.Test
         public void SchoolClassContainsOneClassTime()
         {
             const string ct = "MWF 11:30 12:20";
-            var c = new SchoolClass(t, ct);
-
-            Assert.AreEqual(ct, c.ClassTime);
+            
         }
 
         [TestMethod]
         public void SchoolClassContainsTwoClassTimes()
         {
-            string[] ct2 = {"MWF 11:30 12:20", "TU 11:30 12:20"};
+            var d = new List<DayOfWeek> {DayOfWeek.Monday, DayOfWeek.Friday, DayOfWeek.Wednesday, DayOfWeek.Sunday};
 
-
+            foreach (var i in d)
+            {
+                Console.WriteLine(i);
+            }
+            d.Sort();
+            foreach (var i in d)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }

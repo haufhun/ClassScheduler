@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Model
 {
     public class SchoolClass
     {
-        public string Teacher { get; }
+        public int Credits { get; }
 
-        public string ClassTime { get; }
+        public string ClassName { get; }
+
+        public string Teacher { get;}
+
+        private Dictionary<DayOfWeek, List<Time>> _classOptions;
 
         public SchoolClass()
         {
+            
         }
 
         public SchoolClass(string t)
@@ -17,10 +23,19 @@ namespace Model
             Teacher = t;
         }
 
-        public SchoolClass(string t, string ct)
+        public SchoolClass(string className, string teacher, int credits, Dictionary<DayOfWeek, List<Time>> classOptions)
         {
-            Teacher = t;
-            ClassTime = ct;
+            _classOptions = classOptions;
+            ClassName = className;
+            Teacher = teacher;
+            Credits = credits;
         }
+
+        public List<Time> GetTimesOnDay(DayOfWeek day)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }

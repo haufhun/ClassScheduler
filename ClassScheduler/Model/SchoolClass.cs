@@ -1,13 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model
 {
     public class SchoolClass
     {
+        public string Teacher { get; }
 
+        public string ClassTime { get; }
+
+        public SchoolClass()
+        {
+        }
+
+        public SchoolClass(string t)
+        {
+            Teacher = t;
+        }
+
+        public SchoolClass(string t, string ct)
+        {
+            Teacher = t;
+            ClassTime = ct;
+        }
     }
 }
